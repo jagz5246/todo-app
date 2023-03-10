@@ -1,0 +1,190 @@
+
+body{
+  background-color: rgba(5, 0, 95, 0.942);
+  margin: 20px;
+  padding: 0;
+  font-family:'Segoe UI';
+  height: auto;
+}
+.App{
+  background-color:#0000008c;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 600px;
+  min-height: 100vh;
+}
+.parent{
+  display: flexbox;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header{
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bolder;
+}
+.todo-image{
+  margin-right: 10px;
+  margin-bottom: -10px;
+  width: 50px;
+  height: 50px;
+}
+.modal-wrapper{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.489);
+}
+.modal-container{
+  border-radius: 5px;
+  text-align: center;
+  position: fixed;
+  width: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+}
+.newItem{
+  padding-left: 30px;
+  margin: auto;
+}
+.newItem input{
+  width: 70%;
+  text-align: left;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+.addItem{
+  margin-bottom: -20px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 20px;
+  font-size: 20px;
+  background-color: #007FFF;
+  box-shadow: 1px  1px 3px rgba(0, 0, 0, 0.539);
+}
+.addItem:hover{
+  background-color: black;
+  transition: .5s;
+  color: white;
+}
+.display{
+  margin-left: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  background-color: #FF3CAC;
+  background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
+  box-shadow: 1px  1px 3px rgba(0, 0, 0, 0.539);
+  border-radius: 5px;
+  padding: 10px;
+  width: 70%;
+} 
+.display:hover{
+
+  background-image: linear-gradient( rgba(0,0,0,0.9),rgba(0,0,0,0.9));
+}
+.display p{
+  margin-left: 10px;
+  padding-right: 100px;
+  font-size: 12px;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.deleteIcon, .editIcon{
+  cursor: pointer;
+  font-size: 30px;
+}
+.deleteIcon{
+  padding-right: 10px;
+  color: rgb(57, 223, 57);
+  transition: .5s;
+}
+.deleteIcon:hover{
+  color: red;
+}
+.editIcon{
+  color: rgb(223, 198, 57);
+  transition: .5s;
+}
+.editIcon:hover{
+  color: rgb(255, 255, 255);
+}
+
+.clear{
+  background-color: #FF0800;
+  font-size: 16px;
+  margin-top: 2rem;
+  margin-left: 15rem;
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  border: none; 
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+.clear:hover{
+  color: white;
+  background-color: black;
+}
+@media screen and (max-width:420px) {
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .App{
+    width: 400px;
+    min-height: 100vh;
+  }
+  .parent{
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+  .showTodo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newItem{
+    margin-left: -35px;
+    width: 300px;
+    display: flex;
+    column-gap: 5px;
+  }
+  .addItem{
+    font-size: 22px;
+    padding: 2px;
+    margin-top: -2px;
+    width: 50px;
+    height: 40px;
+  }
+  .display{
+    margin-left: -10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+  } 
+  
+  .clear{
+    margin-left: 0px;
+  }
+}
