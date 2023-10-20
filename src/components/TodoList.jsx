@@ -1,16 +1,18 @@
 import React from 'react'
 import {TiTick, TiEdit} from 'react-icons/ti';
+
+
 function TodoList({todos,deleteItem,editItem,deleteAll}) {
     
     
   return (
-        <div className='showTodo'>
+        <div className='display-todo'>
         {
           todos.map((todo)=>{
             return(
-              <div className='display' key={todo.id}>
-                <p>{todo.name}</p>
-                <div className='icons'>
+              <div className='todo-desc' key={todo.id}>
+                <p> {todo.name}</p>
+                <div className='todo-icons'>
                 <TiTick className='deleteIcon' onClick={()=>deleteItem(todo.id)} />
                 <TiEdit className='editIcon' onClick={()=>editItem(todo.id)} />
                 </div>
@@ -18,7 +20,7 @@ function TodoList({todos,deleteItem,editItem,deleteAll}) {
             )
           })
         }
-        <button className='clear' onClick={deleteAll}>Clear <i className="bi bi-trash-fill clr" ></i></button>
+        <button className='clear' onClick={deleteAll}>Clear</button>        
       </div>
   )
 }

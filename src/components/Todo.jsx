@@ -1,8 +1,9 @@
 
 import React from 'react'
-import logo from './logo-web.png'
+import logo from './logo.png'
 import {useState, useEffect} from 'react'
 import TodoList from './TodoList';
+
 const Todo =()=>{
 //To get Todos from LOCAL STORAGE
 const getLocalItems=()=>{
@@ -75,15 +76,15 @@ useEffect(() => {
 
   return (
     <div className='parent'>
-     <p className='header'>
      <img className='todo-image' src={logo} alt="Logo" />
-     To-Do </p>
-     <span className='newItem'>
-     <input type="text" placeholder="📝 Add a task" value={inputData} 
-      onChange={(e)=> setData(e.target.value)} />
-     {editTodo?<button className='addItem' onClick={addItem}>📝</button>:<button className='addItem' onClick={addItem}>+</button>}
-     </span>
-     <TodoList todos={todos} deleteItem={deleteItem} deleteAll={deleteAll} editItem={editItem}/>
+      <div className='app'>
+        <div className='fields'>
+          <input className='field-desc' type="text" placeholder="📝 Add a task" value={inputData} 
+          onChange={(e)=> setData(e.target.value)} />
+          {editTodo?<button className='addItem' onClick={addItem}>📝</button>:<button className='addItem' onClick={addItem}>+</button>}
+        </div>
+      <TodoList todos={todos} deleteItem={deleteItem} deleteAll={deleteAll} editItem={editItem}/>
+      </div>
     </div>
       )
 }

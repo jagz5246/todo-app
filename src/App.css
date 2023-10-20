@@ -1,190 +1,112 @@
-
-body{
-  background-color: rgba(5, 0, 95, 0.942);
-  margin: 20px;
+*{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   padding: 0;
-  font-family:'Segoe UI';
-  height: auto;
-}
-.App{
-  background-color:#0000008c;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  margin: 0 auto;
-  width: 600px;
-  min-height: 100vh;
-}
-.parent{
-  display: flexbox;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.header{
-  text-align: center;
-  color: white;
-  font-size: 28px;
-  font-weight: bolder;
+  margin: 0;
 }
 .todo-image{
-  margin-right: 10px;
-  margin-bottom: -10px;
-  width: 50px;
-  height: 50px;
+  width: 240px;
+  height: 240px;
 }
-.modal-wrapper{
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.489);
-}
-.modal-container{
-  border-radius: 5px;
-  text-align: center;
-  position: fixed;
-  width: 20%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  color: black;
-}
-.newItem{
-  padding-left: 30px;
-  margin: auto;
-}
-.newItem input{
-  width: 70%;
-  text-align: left;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin-right: 10px;
-  margin-bottom: 30px;
-}
-.addItem{
-  margin-bottom: -20px;
-  cursor: pointer;
-  border-radius: 5px;
-  color: white;
-  padding: 5px 20px;
-  font-size: 20px;
-  background-color: #007FFF;
-  box-shadow: 1px  1px 3px rgba(0, 0, 0, 0.539);
-}
-.addItem:hover{
-  background-color: black;
-  transition: .5s;
-  color: white;
-}
-.display{
-  margin-left: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  background-color: #FF3CAC;
-  background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
-  box-shadow: 1px  1px 3px rgba(0, 0, 0, 0.539);
-  border-radius: 5px;
-  padding: 10px;
-  width: 70%;
-} 
-.display:hover{
-
-  background-image: linear-gradient( rgba(0,0,0,0.9),rgba(0,0,0,0.9));
-}
-.display p{
-  margin-left: 10px;
-  padding-right: 100px;
-  font-size: 12px;
-  color: white;
-  text-align: left;
+.title{
+  display: hidden;
   font-weight: bold;
 }
-.deleteIcon, .editIcon{
-  cursor: pointer;
-  font-size: 30px;
-}
-.deleteIcon{
-  padding-right: 10px;
-  color: rgb(57, 223, 57);
-  transition: .5s;
-}
-.deleteIcon:hover{
-  color: red;
-}
-.editIcon{
-  color: rgb(223, 198, 57);
-  transition: .5s;
-}
-.editIcon:hover{
-  color: rgb(255, 255, 255);
+.parent{
+  background: #FFACAC;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 10px 0px 50px 0px;
 }
 
-.clear{
-  background-color: #FF0800;
-  font-size: 16px;
-  margin-top: 2rem;
-  margin-left: 15rem;
-  /* transform: translate(-50%, -50%); */
+.app{
+  background: #FFEBB4;
+  overflow: scroll;
+  position: relative;
+  display: grid;
+  align-content: start;
+  justify-content: space-evenly;  
+  width: 80vw;
+  height: 80vh;
+  padding: 10px 10px;
+}
+.fields{
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 70vw;
+}
+.fields input{
+  font-size: 1rem;
+  color: #c1b187;
+}
+.field-desc{
+  width: 100%;
+  height: 3.1rem;
+  border: none;
+  padding: 5px 5px;
+  margin-right: 5px;
+}
+.app button{
+  border: none;
   color: white;
-  border: none; 
-  border-radius: 5px;
-  padding: 10px;
+  background: #FFBFA9;
+  font-size: 1.2rem;
+  height: 60px;
+  width: 80px;
   cursor: pointer;
-  transition: 1s;
 }
-.clear:hover{
-  color: white;
-  background-color: black;
+.display-todo{
+  display: block;
 }
-@media screen and (max-width:420px) {
-  body{
-    margin: 0;
-    padding: 0;
+.todo-desc{
+  background-color: white;
+  color: #c1b187;
+  font-size: 1.2rem;
+  width: 92%;
+  height: 3.1rem;
+  border: none;
+  align-items: center;
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-icons{
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #c1b187;
+}
+.editIcon, .deleteIcon{
+  padding: 0px 5px;
+}
+.editIcon:hover, .deleteIcon:hover{
+  transition: .1s ease-out;
+  color: #FFEBB4;
+}
+.clear{
+  cursor: pointer;
+}
+
+@media(max-width:648px){
+  .todo-image{
+    width: 120px;
+    height: 120px;
   }
-  .App{
-    width: 400px;
-    min-height: 100vh;
+  .title{
+    padding: 5px 0;
+    display: hidden;
   }
-  .parent{
-    display: block;
-    margin: auto;
-    width: 100%;
+  .app button{
+    font-size: 15px;
   }
-  .showTodo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .fields{
+    min-width: 80vw;
   }
-  .newItem{
-    margin-left: -35px;
-    width: 300px;
-    display: flex;
-    column-gap: 5px;
+  .todo-desc{
+    font-size: 12px;
   }
-  .addItem{
-    font-size: 22px;
-    padding: 2px;
-    margin-top: -2px;
-    width: 50px;
-    height: 40px;
-  }
-  .display{
-    margin-left: -10px;
-    margin-bottom: 10px;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100%;
-  } 
-  
-  .clear{
-    margin-left: 0px;
+  .todo-icons{
+    font-size: 1.5rem;
   }
 }
